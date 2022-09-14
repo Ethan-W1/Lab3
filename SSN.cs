@@ -1,3 +1,5 @@
+// https://www.ssa.gov/kc/SSAFactSheet--IssuingSSNs.pdf //
+
 namespace Lab3
 {
     public class SSN

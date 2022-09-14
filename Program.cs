@@ -51,7 +51,7 @@ public class Program
                 foreach(Person p in people)
                 {
                     Console.WriteLine(p);
-                    Console.WriteLine("Choose one to delete: ");
+                    Console.Write("Choose one to delete: ");
                     string choice = Console.ReadLine();
                     people.RemoveAt(choice);
                 }
@@ -65,7 +65,9 @@ public class Program
                 break;
             case 6:
                 Person randomPhone = people[random.Next(people.Count())];
-                Console.WriteLine(randomPhone.Number);
+                Console.Write("Choose your separator: ")
+                string sep = Console.ReadLine();
+                Console.WriteLine(sep.Number;
                 break;
             case 0:
                 Console.WriteLine("Goodbye!");
