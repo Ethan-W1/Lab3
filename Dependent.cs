@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,13 +8,16 @@ namespace Lab3
 {
     internal class Dependent : Person
     {
-        public Dependent(string firstName = "", string lastName = "", int age = 0, string social ="", string dependentPhone = "")
+        public Dependent()
         {
-            this.FirstName = firstName;
-            this.LastName = lastName;
-            this.DateTime BirthDate = age + 10;
-            this.SSN = social;
-            this.Phone = dependentPhone;
+            Random rand = new Random();
+            DateTime dateToday = DateTime.Now;
+            // birthdate up to 10+ years.
+            int future = rand.Next(dateToday.Year, dateToday.Year + 10);
+            int month = rand.Next(1, 12);
+            int day = rand.Next(1, 31);
+
+            BirthDate = new DateTime(future, month, day);
         }
     }
 }

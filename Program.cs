@@ -1,5 +1,6 @@
-﻿using Lab3;
-using System.ComponentModel.DataAnnotations;
+﻿// See https://aka.ms/new-console-template for more information
+using Lab3;
+using System;
 
 public class Program
 {
@@ -24,7 +25,7 @@ public class Program
     {
         Console.WriteLine("------ Menu ------");
         Console.WriteLine("1. Create a new Person");
-        Console.WriteLine("2. View all people");
+        Console.WriteLine("2. View All People");
         Console.WriteLine("3. Remove a Person");
         Console.WriteLine("4. Create and View Random Last Name");
         Console.WriteLine("5. Create and View Random SSN");
@@ -36,44 +37,39 @@ public class Program
     public static void MenuChoice(int option)
     {
         Random random = new Random();
-        switch(option)
+        switch (option)
         {
             case 1:
                 people.Add(new Person());
                 break;
             case 2:
-                foreach(Person p in people)
+                foreach (Person p in people)
                 {
                     Console.WriteLine(p);
                 }
                 break;
             case 3:
-                foreach(Person p in people)
-                {
-                    Console.WriteLine(p);
-                    Console.Write("Choose one to delete: ");
-                    string choice = Console.ReadLine();
-                    people.RemoveAt(choice);
-                }
+                Console.WriteLine("Type the number of the person you would like to remove");
+                int personToRemove = Int32.Parse(Console.ReadLine());
+                people.Remove(people[personToRemove]);
+                break;
             case 4:
-                Person randomLast = people[random.Next(people.Count())];
-                Console.WriteLine(randomLast.LastName);
+                Person rand = people[random.Next(people.Count())];
+                Console.WriteLine(rand.LastName);
                 break;
             case 5:
                 Person rando = people[random.Next(people.Count())];
                 Console.WriteLine(rando.SSN);
                 break;
             case 6:
-                Person randomPhone = people[random.Next(people.Count())];
-                Console.Write("Choose your separator: ")
-                string sep = Console.ReadLine();
-                Console.WriteLine(sep.Number;
+                Person ran = people[random.Next(people.Count())];
+                Console.WriteLine(ran.Phone);
                 break;
             case 0:
-                Console.WriteLine("Goodbye!");
+                Console.WriteLine("See ya!");
                 break;
             default:
-                Console.WriteLine("You entered an invalid option!");
+                Console.WriteLine("Invalid option. Can you read?");
                 break;
         }
     }

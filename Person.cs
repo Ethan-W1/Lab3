@@ -1,13 +1,17 @@
-using Microsoft.VisualBasic;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Numerics;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Lab3
 {
-    internal class Person
+    public class Person
     {
         private string[] arrayOfFirstNames = new string[] {
-                "Will", "Jake", "Bob", "Anthony", "Jack",
-                "Veronica", "Nichole", "Jane", "Allison", "Katy"};
+                "Dylan", "Pops", "Parker", "Daniel", "Jim",
+                "Kaley", "Heidi", "Emily", "Kathy", "Tay"};
         //private Dependent[] dependents;
 
         public string FirstName { get; init; }
